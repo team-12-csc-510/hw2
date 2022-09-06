@@ -2,7 +2,7 @@ import re
 from typing import Dict
 
 # Data Structure which holds all the default arguments
-the: Dict = {}
+the: Dict = {"nums": 512}
 
 
 # Identifies the input string to be a number

@@ -1,6 +1,8 @@
 import math
 import random
 
+from src.utils import the
+
 
 class Num:
     def __init__(self, c=0, s=""):
@@ -32,16 +34,15 @@ class Num:
             self.lo = min(v, self.lo)
             self.hi = max(v, self.hi)
             pos = None
-            # TODO  implement the.nums
-            if len(self.has) < 512:
+            if len(self.has) < the["nums"]:
                 pos = 1 + len(self.has)
-            elif self.n > 512:
+                self.has.append(int(v))
+            elif self.n > the["nums"]:
                 pos = random.randint(0, len(self.has))
+                self.has[pos - 1] = int(v)
 
             if pos:
                 self.isSorted = False
-            # TODO: Change this to self.has[pos] = int(v)
-            self.has.insert(pos, int(v))
 
     def div(self):
         a = self.nums()

@@ -1,13 +1,17 @@
 from unittest import TestCase
 
 from src import utils
+from src.num import Num
 
 
 class TestUtils(TestCase):
-    def the(self, my_dict):
-        utils.my_print(my_dict)
+    def setUp(self) -> None:
+        self.num: Num = Num()
 
+    def test_the(self):
+        assert utils.the.get("nums") == 512
 
-# eg = eg()
-# my_dict = {1:2, 3:4, 5:'hello'}
-# eg.the(my_dict)
+    def test_big_num(self) -> None:
+        for i in range(1, 1001):
+            self.num.add(i)
+        assert len(self.num.has) == 512
