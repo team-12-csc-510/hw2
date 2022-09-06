@@ -1,4 +1,4 @@
-# Howework 2: Take a working system (written in LUA) and write it in any other language.
+# Howework 2: Take a working system (written in LUA) and write it in any other language(Python).
 
 Team 12's submission for [HW2](https://github.com/txt/se22/blob/main/docs/hw2345.md) for CSC-510.
 
