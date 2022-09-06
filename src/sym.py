@@ -1,4 +1,5 @@
 import math
+from typing import Dict
 
 
 class Sym:
@@ -8,7 +9,7 @@ class Sym:
         self.n = 0
         self.at = c
         self.name = s
-        self._has = dict()
+        self._has: Dict = dict()
 
     @classmethod
     def fun(cls, p):
