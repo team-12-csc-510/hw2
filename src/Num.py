@@ -13,6 +13,11 @@ class Num:
         self.isSorted = True
         self.w = -1 if "-$" in s else 1
 
+    @staticmethod
+    def per(t, p=0.5):
+        p = math.floor((p * len(t)) + 0.5)
+        return t[max(1, min(len(t), p))]
+
     def nums(self):
         if not self.isSorted:
             self.has.sort()
@@ -36,10 +41,6 @@ class Num:
                 self.isSorted = False
 
             self.has[pos] = int(v)
-
-    def per(self, t, p=0.5):
-        p = math.floor((p * len(t)) + 0.5)
-        return t[max(1, min(len(t), p))]
 
     def div(self):
         a = self.nums()
