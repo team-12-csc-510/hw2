@@ -1,16 +1,37 @@
-import argparse
+import misc
+import sys
 
-# Create the parser
-parser = argparse.ArgumentParser(add_help=False)
+help = """CSV : summarized csv file 
+(c) 2022 Tim Menzies <timm@ieee.org> BSD−2 license 
 
-# Add the arguments
-parser.add_argument("-e", "--eg", type=str, help="start−up example")
-parser.add_argument("-d", "--dump", type=str, help="on test failure, exit with stack dump")
-parser.add_argument("-f", "--file", type=str, help="file with csv data")
-parser.add_argument("-h", "--help", type=str, help="show help")
-parser.add_argument("-n", "--nums", type=str, help="number of nums to keep")
-parser.add_argument("-s", "--seed", type=str, help="random number seed")
-parser.add_argument("-S", "--seperator", type=str, help="feild seperator")
+USAGE: lua seen.lua [OPTIONS] 
 
-args = parser.parse_args()
-print(args.eg)
+OPTIONS: 
+ -e --eg          start-up example                         = nothing 
+ -d --dump        on test failure, exit with stack dump    = false 
+ -f --file        file with csv data                       = ../data/auto93.csv 
+ -h --help        show help                                = false  
+ -n --nums        number of nums to keep                   = 512 
+ -s --seed        random number seed                       = 10019 
+ -S --seperator   feild seperator                          = ,]]"""
+ 
+def cli(arg_dict):
+    keys = list(arg_dict.keys())
+    for key in keys:
+        v = arg_dict[key]
+        usr_args_ls = sys.argv
+        for ind in range(len(usr_args_ls)):
+            if usr_args_ls[ind] == "-" + key[0] or usr_args_ls[ind] == "--" + key:
+                if type(v).__name__ == 'bool':
+                    v = not v
+                else:
+                    v = usr_args_ls[ind+1]
+                    
+            arg_dict[key] = v
+                                    
+misc.default_args(help, misc.the)
+print("Before:", misc.the)
+cli(misc.the)
+print(sys.argv)
+print("After:", misc.the)
+
