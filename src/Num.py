@@ -40,8 +40,8 @@ class Num:
 
             if pos:
                 self.isSorted = False
-
-            self.has[pos] = int(v)
+            # TODO: Change this to self.has[pos] = int(v)
+            self.has.insert(pos, int(v))
 
     def div(self):
         a = self.nums()
