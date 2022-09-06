@@ -32,7 +32,8 @@ class Num:
             self.lo = min(v, self.lo)
             self.hi = max(v, self.hi)
             pos = None
-            if len(self.has):
+            # TODO  implement the.nums
+            if len(self.has) < 512:
                 pos = 1 + len(self.has)
             elif self.n > 512:
                 pos = random.randint(0, len(self.has))
