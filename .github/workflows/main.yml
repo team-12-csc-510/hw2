@@ -43,8 +43,7 @@ jobs:
           isort --check-only .
           black --check .
           flake8 --ignore D203 --exclude .venv,.git,__pycache__,docs/source/conf.py,old,build,dist --max-complexity 10
-          mypy src/app.py
-
+          mypy src/*
       - name: Test with pytest
         run: |
           source .venv/bin/activate
