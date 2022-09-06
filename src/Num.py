@@ -18,7 +18,7 @@ class Num:
             self.has.sort()
 
         self.isSorted = True
-        return self.isSorted
+        return self.has
 
     def add(self, v):
 
