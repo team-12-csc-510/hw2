@@ -1,6 +1,6 @@
 import sys
 
-import utils
+import src.utils as utils
 
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD−2 license
