@@ -30,7 +30,7 @@ class Num:
             if len(self.has):
                 pos = 1 + len(self.has)
             elif self.n > 512:
-                pos = random.randint(len(self.has))
+                pos = random.randint(0, len(self.has))
 
             if pos:
                 self.isSorted = False
