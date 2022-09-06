@@ -1,6 +1,6 @@
 import sys
 
-import misc
+import utils
 
 help = """CSV : summarized csv file
 (c) 2022 Tim Menzies <timm@ieee.org> BSD−2 license
@@ -33,8 +33,8 @@ def cli(arg_dict):
             arg_dict[key] = v
 
 
-misc.default_args(help, misc.the)
-print("Before:", misc.the)
-cli(misc.the)
+utils.default_args(help, utils.the)
+print("Before:", utils.the)
+cli(utils.the)
 print(sys.argv)
-print("After:", misc.the)
+print("After:", utils.the)

@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from src.Num import Num
+from src.num import Num
 
 
 class TestNum(TestCase):

@@ -4,21 +4,21 @@ from src.sym import Sym
 
 
 class TestSym(TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.sym = Sym()
         data = ["a", "a", "a", "a", "b", "b", "c"]
         for i in data:
             self.sym.add(i)
 
-    def test_add(self):
+    def test_add(self) -> None:
         return_value = {"a": 4, "b": 2, "c": 1}
         self.assertEqual(self.sym.n, 7, "Adder error")
         self.assertEqual(self.sym._has, return_value, "Adder error")
 
-    def test_mid(self):
+    def test_mid(self) -> None:
         mode = self.sym.mid()
         self.assertEqual(mode, "a", "Mode error")
 
-    def test_div(self):
+    def test_div(self) -> None:
         entropy = self.sym.div()
         assert 1.37 <= entropy <= 1.38, "Entropy error"
