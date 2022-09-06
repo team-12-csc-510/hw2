@@ -17,7 +17,7 @@ class Sym:
     def add(self, v):
         if v != "?":
             self.n += 1
-            if self._has.get(v) != None:
+            if self._has.get(v) is not None:
                 self._has[v] = self._has.get(v) + 1
             else:
                 self._has[v] = 1

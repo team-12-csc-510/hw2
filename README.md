@@ -1,9 +1,8 @@
-# Howework 1: Write a "good" Github Repo
+# Howework 2: Take a working system (written in LUA) and write it in any other language.
 
 Team 12's submission for [HW1](https://github.com/txt/se22/blob/main/docs/hw1.md) for CSC-510.
 
-![example branch parameter](https://github.com/team-12-csc-510/hw1/actions/workflows/main.yml/badge.svg?branch=main)
-[![DOI](https://zenodo.org/badge/529930397.svg)](https://zenodo.org/badge/latestdoi/529930397)
+![example branch parameter](https://github.com/team-12-csc-510/hw2/actions/workflows/main.yml/badge.svg?branch=main)
 ----
 ## Table Of Contents
 - [Installation](#installation)
