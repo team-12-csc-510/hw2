@@ -5,6 +5,12 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+      - id: check-toml
+
+  - repo: https://github.com/executablebooks/mdformat
+    rev: 0.7.16
+    hooks:
+      - id: mdformat
 
   - repo: https://github.com/psf/black
     rev: 22.8.0
@@ -27,7 +33,4 @@ repos:
     hooks:
       - id: mypy
 
-  - repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.16
-    hooks:
-      - id: mdformat
+
