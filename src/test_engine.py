@@ -26,9 +26,9 @@ class TestEngine:
             if os.path.isfile(os.path.join(self.path, file))
         ]
         for file in file_list:
-            loader = importlib.machinery.SourceFileLoader("testmod", file)
-            mod = types.ModuleType("testmod")
-            loader.exec_module(mod)
+            mod_loader = importlib.machinery.SourceFileLoader("tests", file)
+            mod = types.ModuleType("tests")
+            mod_loader.exec_module(mod)
             self.test_list.extend(
                 [
                     func
