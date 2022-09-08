@@ -3,9 +3,6 @@ import sys
 import src.utils as utils
 
 help = """CSV : summarized csv file
-(c) 2022 Tim Menzies <timm@ieee.org> BSD−2 license
-
-USAGE: lua seen.lua [OPTIONS]
 
 OPTIONS:
  -e --eg          start-up example                         = nothing
@@ -14,7 +11,7 @@ OPTIONS:
  -h --help        show help                                = false
  -n --nums        number of nums to keep                   = 512
  -s --seed        random number seed                       = 10019
- -S --seperator   feild seperator                          = ,]]"""
+ -S --seperator   field seperator                          = ,]]"""
 
 
 def cli(arg_dict):
