@@ -23,24 +23,16 @@ jobs:
           virtualenvs-in-project: true
           installer-parallel: true
 
-      - name: Load cached venv
-        id: cached-poetry-dependencies
-        uses: actions/cache@v2
-        with:
-          path: .venv
-          key: venv-${{ runner.os }}-${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('**/poetry.lock') }}
-
-      - name: Install dependencies if cache does not exist
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --no-interaction --no-root
-
       - name: Install root project, if required
         run: poetry install --no-interaction
 
       - name: Debug
         run: |
+          python --version
           pip list
-          source .venv/bin/activate
+          
+          source $VENV
+          python --version
           pip list
 
       - name: Code quality checks
