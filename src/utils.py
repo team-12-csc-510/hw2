@@ -1,8 +1,10 @@
+import logging
 import re
+import traceback
 from typing import Dict
 
 # Data Structure which holds all the default arguments
-the: Dict = {"nums": 512}
+the: Dict = {"nums": 512, "dump": False}
 
 
 # Identifies the input string to be a number
@@ -39,3 +41,30 @@ def my_print(my_dict):
 
     print_str += "}"
     print(print_str)
+
+
+def custom_assert_equals(val1, val2, msg=""):
+    if val1 != val2:
+        logging.error(msg)
+        traceback.print_stack()
+        return False
+    else:
+        return True
+
+
+def custom_assert_greater(val1, val2, msg=""):
+    if val1 <= val2:
+        logging.error(msg)
+        traceback.print_stack()
+        return False
+    else:
+        return True
+
+
+def custom_assert_greater_equals(val1, val2, msg=""):
+    if val1 < val2:
+        logging.error(msg)
+        traceback.print_stack()
+        return False
+    else:
+        return True

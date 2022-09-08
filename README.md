@@ -1,14 +1,16 @@
-# Howework 2: Take a working system (written in LUA) and write it in any other language(Python).
+# Howework 2: Take a working system (written in LUA) and write it in any other language(Python)
 
 Team 12's submission for [HW2](https://github.com/txt/se22/blob/main/docs/hw2345.md) for CSC-510.
 
-![example branch parameter](https://github.com/team-12-csc-510/hw2/actions/workflows/main.yml/badge.svg?branch=main)
-----
+## ![example branch parameter](https://github.com/team-12-csc-510/hw2/actions/workflows/main.yml/badge.svg?branch=main)
+
 ## Table Of Contents
+
 - [Installation](#installation)
 - [License](#license)
 - [Team](#team)
-----
+
+______________________________________________________________________
 
 ## Installation
 
@@ -16,7 +18,6 @@ Requires [Python] v3.9+.
 Clone the repository and move into the project directory and install the project dependencies. <br>
 
 To install the dependencies/packages required for the project install [Poetry]
-
 
 ```shell
 curl https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python3 -
@@ -27,8 +28,8 @@ environment variable.
 
 > Refer [here](https://stackoverflow.com/questions/60768676/what-is-the-default-install-path-for-poetry) for configuring poetry path correctly.
 
-
 You can test that everything is set up by executing:
+
 ```shell
 poetry --version
 ```
@@ -40,15 +41,16 @@ poetry env use python3
 poetry install
 ```
 
+______________________________________________________________________
 
-----
 ## License
 
 This project is licensed under MIT license available in [LICENSE](https://github.com/team-12-csc-510/hw1/blob/main/LICENSE.md) file
 
-----
+______________________________________________________________________
 
 ## Team
+
 Name  | Unity id
 ------------- | -------------
 Aditya Tewari  | adtewari
@@ -57,7 +59,7 @@ Ritwik Tiwari  | rtiwari2
 Saksham Thakur  | sthakur5
 Shubhender Singh  | ssingh54
 
----
+______________________________________________________________________
 
-[Python]: <https://python.org>
-[Poetry]: <https://python-poetry.org/>
+[poetry]: https://python-poetry.org/
+[python]: https://python.org
