@@ -33,14 +33,47 @@ def default_args(def_str, arg_dict):
 
 
 # Our implementation of the custom print of a dictionary
-def my_print(my_dict):
-    print_str = "{"
-    keys = list(my_dict.keys())
-    for key in keys:
-        print_str += ":" + str(key) + " " + str(my_dict[key])
+# def my_print(my_dict):
+#     print_str = "{"
+#     keys = list(my_dict.keys())
+#     for key in keys:
+#         print_str += ":" + str(key) + " " + str(my_dict[key])
 
-    print_str += "}"
-    print(print_str)
+#     print_str += "}"
+#     print(print_str)
+
+# Generates a string from nested table
+def o(t):
+    
+    def show(k,v):
+        
+        if not re.search("^_" , k):
+            v = o(v)
+            return f':{k} {v}'
+    
+    if not (type(t).__name__ == 'dict' or type(t).__name__ == 'list'):
+        return str(t)
+    
+    if type(t).__name__ == 'list':
+        return "{" + "".join(t)  + "}" 
+    
+    u = []
+    keys = list(t.keys())
+    for key in keys:
+        val = show(key , t[key])
+        if val:
+            u.append(val) 
+      
+    print("Before sorting -> " , u)
+    u.sort()
+    print("After sorting -> " , u)
+    return "{" + "".join(u) + "}"
+
+
+# Prints the string from function o
+def oo(t):
+    print(o(t))
+    return t
 
 
 def custom_assert_equals(val1, val2, msg=""):
