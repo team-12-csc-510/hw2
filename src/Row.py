@@ -6,12 +6,10 @@ class Row:
         The Row constructor takes a dictionary 'row' as input. 
     """
     
-    def __init__(row):
+    def __init__(self, row):
         
-        cells = row
-        cooked = row.copy()
-        isEvaled = False
-        
-        return cells, cooked, isEvaled
+        self.cells = row
+        self.cooked = row.copy()
+        self.isEvaled = False
     
         
