@@ -9,7 +9,7 @@ class Row:
     def __init__(row):
         
         cells = row
-        cooked = t.copy()
+        cooked = row.copy()
         isEvaled = False
         
         return cells, cooked, isEvaled
