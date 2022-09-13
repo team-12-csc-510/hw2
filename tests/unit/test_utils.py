@@ -7,7 +7,7 @@ sys.path.append(new_path)
 from src import utils
 from src.num import Num
 from src.utils import custom_assert_equals
-# from src import Data
+from src import Data
 from src.utils import o
 
 def test_the() -> None:
