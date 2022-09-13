@@ -2,8 +2,8 @@ import num
 import sym
 import re
 
-class Cols():
-    
+
+class Cols:
     def __init__(self, names):
         self.names = names
         self.all = list()
