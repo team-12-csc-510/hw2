@@ -36,11 +36,11 @@ def test_stats() -> bool:
     #     "data", csv_file_name
     # )
     # print(csv_file_path)
-    data = data.Data(csv_file_name)
+    data_obj = data.Data(csv_file_name)
     div = helper_stats_div
     mid = helper_stats_mid
-    print("xmid", o(data.stat(2, data.cols.x, mid)))
-    print("xdiv", o(data.stat(3, data.cols.x, div)))
-    print("ymid", o(data.stat(2, data.cols.y, mid)))
-    print("ydiv", o(data.stat(3, data.cols.y, div)))
+    print("xmid", o(data_obj.stat(2, data_obj.cols.x, mid)))
+    print("xdiv", o(data_obj.stat(3, data_obj.cols.x, div)))
+    print("ymid", o(data_obj.stat(2, data_obj.cols.y, mid)))
+    print("ydiv", o(data_obj.stat(3, data_obj.cols.y, div)))
     return True
