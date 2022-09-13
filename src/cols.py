@@ -1,9 +1,9 @@
-import num
-import sym
+from num import Num
+from sym import Sym
 import re
 
-class Cols():
-    
+
+class Cols:
     def __init__(self, names):
         self.names = names
         self.all = list()
@@ -13,9 +13,9 @@ class Cols():
         
         for c,s in zip(range(len(names), names)):
             if re.search('^[A-Z]', s):
-                col = num(c, s)
+                col = Num(c, s)
             else:
-                col = sym(c, s)
+                col = Sym(c, s)
             self.all.append(col)
 
             if re.search(':$'):
