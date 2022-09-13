@@ -1,4 +1,5 @@
 import logging
+import math
 import re
 import traceback
 from typing import Dict
@@ -24,6 +25,11 @@ def coerce(in_str):
         return in_str
 
 
+def rnd(x, places=2):
+    mult = pow(10, places)
+    return math.floor(x*mult + 5)/mult
+
+
 # Updates the variable
 def default_args(def_str, arg_dict):
     regex = r"\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)"
@@ -47,7 +53,7 @@ def o(t):
     
     def show(k,v):
         
-        if not re.search("^_" , k):
+        if not re.search("^_", k):
             v = o(v)
             return f':{k} {v}'
     
