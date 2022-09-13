@@ -32,7 +32,7 @@ def test_stats() -> None:
 
     csv_file_name = "auto93.csv"
     csv_file_path = os.path.join("/".join(os.path.abspath(__file__).split("/")[:-3]), "data", csv_file_name) 
-    print(csv_file_path)
+    # print(csv_file_path)
     data = Data.Data(csv_file_name)
     div = helper_stats_div
     mid = helper_stats_mid
