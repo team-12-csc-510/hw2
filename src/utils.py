@@ -27,7 +27,7 @@ def coerce(in_str):
 
 def rnd(x, places=2):
     mult = pow(10, places)
-    return math.floor(x*mult + 5)/mult
+    return math.floor(x * mult + 5) / mult
 
 
 # Updates the variable
@@ -50,29 +50,28 @@ def default_args(def_str, arg_dict):
 
 # Generates a string from nested table
 def o(t):
-    
-    def show(k,v):
-        
+    def show(k, v):
+
         if not re.search("^_", k):
             v = o(v)
-            return f':{k} {v}'
-    
-    if not (type(t).__name__ == 'dict' or type(t).__name__ == 'list'):
+            return f":{k} {v}"
+
+    if not (type(t).__name__ == "dict" or type(t).__name__ == "list"):
         return str(t)
-    
-    if type(t).__name__ == 'list':
-        return "{" + "".join(t)  + "}" 
-    
+
+    if type(t).__name__ == "list":
+        return "{" + "".join(t) + "}"
+
     u = []
     keys = list(t.keys())
     for key in keys:
-        val = show(key , t[key])
+        val = show(key, t[key])
         if val:
-            u.append(val) 
-      
-    print("Before sorting -> " , u)
+            u.append(val)
+
+    print("Before sorting -> ", u)
     u.sort()
-    print("After sorting -> " , u)
+    print("After sorting -> ", u)
     return "{" + "".join(u) + "}"
 
 

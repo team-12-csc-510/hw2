@@ -1,6 +1,7 @@
-from cols import Cols
 import utils
-from Row import Row
+
+from cols import Cols
+from row import Row
 
 
 class Data:
@@ -18,9 +19,9 @@ class Data:
     def csv(self, fname: str):
         with open(fname, "r+") as input_file:
             for line in input_file:
-                l = line.replace('\n', '').rstrip().split(',')
+                newLine = line.replace("\n", "").rstrip().split(",")
                 t = []
-                for i in l:
+                for i in newLine:
                     t.append(utils.coerce(i))
                 self.add(t.copy())
                 # print(t)
@@ -38,7 +39,7 @@ class Data:
             for td in self.cols.y:
                 td.add(row.cells[td.at])
 
-    def stat(self, places, showCols, fun='mid'):
+    def stat(self, places, showCols, fun="mid"):
         if showCols is None:
             showCols = self.cols.y
         t = []
@@ -48,11 +49,3 @@ class Data:
                 v = utils.rnd(v, places)
             t[col.name] = v
         return t
-
-
-
-
-
-
-
-
