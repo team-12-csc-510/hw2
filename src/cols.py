@@ -1,5 +1,5 @@
-from num import Num
-from sym import Sym
+import num
+import sym
 import re
 
 
@@ -12,14 +12,14 @@ class Cols:
         self.y = list()
         
         for c,s in zip(range(len(names), names)):
-            if re.search('^[A-Z]', s):
-                col = Num(c, s)
+            if re.match('^[A-Z]*', s):
+                col = num.Num(c, s)
             else:
-                col = Sym(c, s)
+                col = sym.Sym(c, s)
             self.all.append(col)
 
-            if re.search(':$'):
-                if re.search('\+$', s) or re.search('\-$', s):
+            if re.match('.*:$', s):
+                if re.match('.*\+$', s) or re.match('.*\-$', s):
                     self.y.append(col)
                 else:
                     self.x.append(col)
