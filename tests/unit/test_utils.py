@@ -4,9 +4,11 @@
 # path_ls = abs_file_path.split("/")[:-3]
 # new_path = "/".join(path_ls)
 # sys.path.append(new_path)
-from src import data, utils
+import os
+from src import utils
 from src.num import Num
-from src.utils import custom_assert_equals, o
+from src.utils import custom_assert_equals, csv, oo
+
 
 # import sys
 
@@ -22,25 +24,21 @@ def test_big_num() -> None:
     return custom_assert_equals(len(num.has), 512, "Big num error")
 
 
-# Print some stats on columns.
-def test_stats() -> bool:
-    def helper_stats_div(col):
-        return col.div()
-
-    def helper_stats_mid(col):
-        return col.mid()
-
+def test_csv() -> bool:
     csv_file_name = "auto93.csv"
-    # csv_file_path = os.path.join(
-    #     "/".join(os.path.abspath(__file__).split("/")[:-3]),
-    #     "data", csv_file_name
-    # )
-    # print(csv_file_path)
-    data_obj = data.Data(csv_file_name)
-    div = helper_stats_div
-    mid = helper_stats_mid
-    print("xmid", o(data_obj.stat(2, data_obj.cols.x, mid)))
-    print("xdiv", o(data_obj.stat(3, data_obj.cols.x, div)))
-    print("ymid", o(data_obj.stat(2, data_obj.cols.y, mid)))
-    print("ydiv", o(data_obj.stat(3, data_obj.cols.y, div)))
+    def helper_func():
+        n = 0
+
+        def _(row):
+            nonlocal n
+            n = n + 1
+            if n <= 10:
+                return oo(row)
+            else:
+                return
+
+        return _
+
+    helper_function = helper_func()
+    csv(csv_file_name, helper_function)
     return True

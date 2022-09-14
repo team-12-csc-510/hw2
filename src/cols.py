@@ -12,7 +12,7 @@ class Cols:
         self.x = list()
         self.y = list()
 
-        for c, s in zip(range(len(names), names)):
+        for c, s in enumerate(names):
             if re.match("^[A-Z]*", s):
                 col = num.Num(c, s)
             else:
@@ -24,5 +24,5 @@ class Cols:
                     self.y.append(col)
                 else:
                     self.x.append(col)
-                if re.find("!$", s):
+                if re.match("!$", s):
                     self.klass = col
