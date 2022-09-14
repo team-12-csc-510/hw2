@@ -4,11 +4,10 @@
 # path_ls = abs_file_path.split("/")[:-3]
 # new_path = "/".join(path_ls)
 # sys.path.append(new_path)
-import os
+
 from src import utils
 from src.num import Num
-from src.utils import custom_assert_equals, csv, oo
-
+from src.utils import csv, custom_assert_equals, oo
 
 # import sys
 
@@ -26,6 +25,7 @@ def test_big_num() -> None:
 
 def test_csv() -> bool:
     csv_file_name = "auto93.csv"
+
     def helper_func():
         n = 0
 

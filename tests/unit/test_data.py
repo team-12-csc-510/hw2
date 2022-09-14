@@ -1,7 +1,5 @@
-import os
-
-from src.utils import custom_assert_equals, o, oo
 from src import data
+from src.utils import o, oo
 
 
 # Print some stats on columns.

@@ -111,7 +111,8 @@ def custom_assert_greater_equals(val1, val2, msg=""):
 
 
 def csv(fname: str, fun):
-    f_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../data", fname)
+    path = os.path.dirname(os.path.abspath(__file__))
+    f_path = os.path.join(path, "../data", fname)
     with open(f_path, "r+") as input_file:
         for line in input_file:
             newLine = line.replace("\n", "").rstrip().split(",")
