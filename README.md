@@ -8,6 +8,7 @@ Team 12's submission for [HW2-5](https://github.com/txt/se22/blob/main/docs/hw23
 
 - [Installation](#installation)
 - [License](#license)
+- [Homeworks](#homeworks)
 - [Team](#team)
 
 ______________________________________________________________________
