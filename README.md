@@ -3,6 +3,8 @@
 Team 12's submission for [HW2-5](https://github.com/txt/se22/blob/main/docs/hw2345.md) for CSC-510.
 
 ## ![example branch parameter](https://github.com/team-12-csc-510/hw2/actions/workflows/main.yml/badge.svg?branch=main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Table Of Contents
 
