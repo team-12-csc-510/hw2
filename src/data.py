@@ -1,6 +1,6 @@
-from cols import Cols
-import utils
-from Row import Row
+import src.utils as utils
+from src.cols import Cols
+from src.row import Row
 
 
 class Data:
@@ -8,22 +8,12 @@ class Data:
         self.cols = None
         self.rows = []
         if isinstance(src, str):
-            self.csv(src)
+            utils.csv(src, self.add)
         else:
             if src is None:
                 src = []
             for x in range(src):
                 self.add(self.rows)
-
-    def csv(self, fname: str):
-        with open(fname, "r+") as input_file:
-            for line in input_file:
-                l = line.replace('\n', '').rstrip().split(',')
-                t = []
-                for i in l:
-                    t.append(utils.coerce(i))
-                self.add(t.copy())
-                # print(t)
 
     def add(self, xs):
         if not self.cols:
@@ -38,21 +28,16 @@ class Data:
             for td in self.cols.y:
                 td.add(row.cells[td.at])
 
-    def stat(self, places, showCols, fun='mid'):
+    def stat(self, places, showCols, fun="mid"):
         if showCols is None:
             showCols = self.cols.y
-        t = []
+        t = {}
         for col in showCols:
-            v = getattr(col, fun)()
+            if isinstance(fun, str):
+                v = getattr(col, fun)()
+            else:
+                v = fun(col)
             if isinstance(v, int):
                 v = utils.rnd(v, places)
             t[col.name] = v
         return t
-
-
-
-
-
-
-
-

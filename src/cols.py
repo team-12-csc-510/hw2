@@ -1,6 +1,7 @@
-from num import Num
-from sym import Sym
 import re
+
+import src.num as num
+import src.sym as sym
 
 
 class Cols:
@@ -10,18 +11,18 @@ class Cols:
         self.klass = None
         self.x = list()
         self.y = list()
-        
-        for c,s in zip(range(len(names), names)):
-            if re.search('^[A-Z]', s):
-                col = Num(c, s)
+
+        for c, s in enumerate(names):
+            if re.match("^[A-Z]*", s):
+                col = num.Num(c, s)
             else:
-                col = Sym(c, s)
+                col = sym.Sym(c, s)
             self.all.append(col)
 
-            if re.search(':$'):
-                if re.search('\+$', s) or re.search('\-$', s):
+            if re.match(".*:$", s):
+                if re.match(r".*\+$", s) or re.match(r".*\-$", s):
                     self.y.append(col)
                 else:
                     self.x.append(col)
-                if re.find('!$', s):
+                if re.match("!$", s):
                     self.klass = col

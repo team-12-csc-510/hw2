@@ -5,7 +5,7 @@ import traceback
 import types
 from inspect import getmembers, isfunction
 
-from .utils import the
+from src.utils import the
 
 
 class TestEngine:
@@ -49,6 +49,7 @@ class TestEngine:
                         self.fails += 1
                 except Exception:
                     print(traceback.print_exc())
+                    self.fails += 1
 
         tests = len(self.test_list)
         print(f"Executed {tests} test cases ; failed {self.fails} test cases")
