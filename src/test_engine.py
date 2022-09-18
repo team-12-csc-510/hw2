@@ -49,6 +49,7 @@ class TestEngine:
                         self.fails += 1
                 except Exception:
                     print(traceback.print_exc())
+                    self.fails += 1
 
         tests = len(self.test_list)
         print(f"Executed {tests} test cases ; failed {self.fails} test cases")

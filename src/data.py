@@ -31,9 +31,12 @@ class Data:
     def stat(self, places, showCols, fun="mid"):
         if showCols is None:
             showCols = self.cols.y
-        t = []
+        t = {}
         for col in showCols:
-            v = getattr(col, fun)()
+            if isinstance(fun, str):
+                v = getattr(col, fun)()
+            else:
+                v = fun(col)
             if isinstance(v, int):
                 v = utils.rnd(v, places)
             t[col.name] = v

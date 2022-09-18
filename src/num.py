@@ -13,7 +13,7 @@ class Num:
         self.lo = float("inf")
         self.hi = float("-inf")
         self.isSorted = True
-        self.w = -1 if s[-1] == "-" else 1
+        self.w = -1 if (len(s) > 0 and s[-1] == "-") else 1
 
     @staticmethod
     def per(t, p=0.5):
