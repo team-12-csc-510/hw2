@@ -8,22 +8,12 @@ class Data:
         self.cols = None
         self.rows = []
         if isinstance(src, str):
-            self.csv(src)
+            utils.csv(src, self.add)
         else:
             if src is None:
                 src = []
             for x in range(src):
                 self.add(self.rows)
-
-    def csv(self, fname: str):
-        with open(fname, "r+") as input_file:
-            for line in input_file:
-                newLine = line.replace("\n", "").rstrip().split(",")
-                t = []
-                for i in newLine:
-                    t.append(utils.coerce(i))
-                self.add(t.copy())
-                # print(t)
 
     def add(self, xs):
         if not self.cols:

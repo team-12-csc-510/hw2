@@ -1,5 +1,6 @@
 import logging
 import math
+import os.path
 import re
 import traceback
 from typing import Dict
@@ -60,7 +61,8 @@ def o(t):
         return str(t)
 
     if type(t).__name__ == "list":
-        return "{" + "".join(t) + "}"
+        p = [str(i) for i in t]
+        return "{" + "".join(p) + "}"
 
     u = []
     keys = list(t.keys())
@@ -106,3 +108,15 @@ def custom_assert_greater_equals(val1, val2, msg=""):
         return False
     else:
         return True
+
+
+def csv(fname: str, fun):
+    path = os.path.dirname(os.path.abspath(__file__))
+    f_path = os.path.join(path, "../data", fname)
+    with open(f_path, "r+") as input_file:
+        for line in input_file:
+            newLine = line.replace("\n", "").rstrip().split(",")
+            t = []
+            for i in newLine:
+                t.append(coerce(i))
+            fun(t.copy())
