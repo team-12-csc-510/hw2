@@ -51,13 +51,12 @@ ______________________________________________________________________
 
 ## Homeworks
 
-Name  | Status
-------------- | -------------
-Homework 2  | ✓
-Homework 3  | ✓
-Homework 4  | ⬜
-Homework 5  | ⬜
-
+Name  | Status | Tasks
+------------- | -------------| -------------
+Homework 2  | ✓ | Get this going for the `Num` and `Sym` class (below) and the tests cases `the`, `sym`, `num`, `bignum`.|
+Homework 3  | ✓ | Get this going for the `Cols`, `Row`, `Data` class and the test cases `eg.csv, eg.data, eg.stats`.|
+Homework 4  | ⬜ | Add all the bling from HW1. Also, add post-commit hooks to auto run all the test cases, the code coverage checks (if your language supports then), and the documentation generators.  For more on what kinds of documentation is acceptable, see [the web site from lecture1](https://user-images.githubusercontent.com/29195/130997647-d933884e-8e5c-4f0c-a367-6a5d69bb1df1.png).|
+Homework 5  | ⬜ |For five other groups from cs510 (picked at random), apply the Project1 [rubric](https://github.com/txt/se22/blob/main/docs/proj1.md#rubric).  Important note: whatever scores you offer, these will **not** change the other group's scores.|
 ______________________________________________________________________
 
 ## Team
