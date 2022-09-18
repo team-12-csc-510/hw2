@@ -1,7 +1,7 @@
 import re
 
-import num
-import sym
+import src.num as num
+import src.sym as sym
 
 
 class Cols:
