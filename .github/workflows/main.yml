@@ -38,3 +38,13 @@ jobs:
         run: |
           source $VENV
           python -m pytest
+
+      - name: Run Coverage
+        run: python3 -m pytest --cov-report term --cov-report xml:coverage.xml --cov=src
+      - name: Run CovCode
+        run: |
+          curl -Os https://uploader.codecov.io/v0.1.0_4653/linux/codecov
+          chmod +x codecov
+          ./codecov -t ${CODECOV_TOKEN}
+      - name: Run CodeCov
+        run: codecov --token=${{ secrets.codecov_token }}"
