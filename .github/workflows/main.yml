@@ -34,7 +34,9 @@ jobs:
           flake8 --ignore D203 --exclude .venv,.git,__pycache__,docs/source/conf.py,old,build,dist --max-complexity 10
           mypy src/*
           mypy tests/*
-      - name: Test with pytest
-        run: |
-          source $VENV
-          python -m pytest
+
+#       TODO: Run test engine here.
+#      - name: Test with pytest
+#        run: |
+#          source $VENV
+#          python src/test_engine.py
