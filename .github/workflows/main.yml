@@ -36,7 +36,7 @@ jobs:
           mypy tests/*
 
 #       TODO: Run test engine here.
-#      - name: Test with pytest
-#        run: |
-#          source $VENV
-#          python src/test_engine.py
+     - name: Test with pytest
+       run: |
+         source $VENV
+         python src/test_engine.py
