@@ -1,5 +1,4 @@
 import utils
-
 from cols import Cols
 from row import Row
 
