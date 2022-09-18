@@ -5,7 +5,7 @@ Team 12's submission for [HW2-5](https://github.com/txt/se22/blob/main/docs/hw23
 ## ![example branch parameter](https://github.com/team-12-csc-510/hw2/actions/workflows/main.yml/badge.svg?branch=main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[![codecov](https://codecov.io/gh/team-12-csc-510/hw2/branch/coverage-test/graph/badge.svg?token=UUKFDSSVL5)](https://codecov.io/gh/team-12-csc-510/hw2)
+[![codecov](https://codecov.io/gh/team-12-csc-510/hw2/branch/main/graph/badge.svg?token=UUKFDSSVL5)](https://codecov.io/gh/team-12-csc-510/hw2)
 
 
 ## Table Of Contents
