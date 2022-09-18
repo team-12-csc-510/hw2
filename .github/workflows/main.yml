@@ -41,7 +41,9 @@ jobs:
           python -m pytest
       
       - name: Run tests and collect coverage
-        run: pytest --cov src
+        run: |
+        pip install pytest-cov
+        pytest --cov src
       
       - name: Upload coverage to Codecov
         uses: |
