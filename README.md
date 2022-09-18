@@ -1,6 +1,6 @@
-# Howework 2: Take a working system (written in LUA) and write it in any other language(Python)
+# Howework 2-5: Take a working system (written in LUA) and write it in any other language(Python)
 
-Team 12's submission for [HW2](https://github.com/txt/se22/blob/main/docs/hw2345.md) for CSC-510.
+Team 12's submission for [HW2-5](https://github.com/txt/se22/blob/main/docs/hw2345.md) for CSC-510.
 
 ## ![example branch parameter](https://github.com/team-12-csc-510/hw2/actions/workflows/main.yml/badge.svg?branch=main)
 
@@ -47,6 +47,16 @@ ______________________________________________________________________
 
 This project is licensed under MIT license available in [LICENSE](https://github.com/team-12-csc-510/hw1/blob/main/LICENSE.md) file
 
+______________________________________________________________________
+
+## Homeworks
+
+Name  | Status
+------------- | -------------
+Homework 2  | &check;
+Homework 3  | &check;
+Homework 4  | ⬜
+Homework 5  | ⬜
 ______________________________________________________________________
 
 ## Team
