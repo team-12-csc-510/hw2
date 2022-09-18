@@ -3,9 +3,28 @@ import random
 
 from src.utils import the
 
+"""Add up two integer numbers.
+
+This function simply wraps the ``+`` operator, and does not
+do anything interesting, except for illustrating what
+the docstring of a very simple function looks like.
+
+:param int num1: First number to add.
+:param int num2: Second number to add.
+:returns:  The sum of ``num1`` and ``num2``.
+:rtype: int
+:raises AnyError: If anything bad happens.
+"""
+
 
 class Num:
+    """This is a class that summarizes a stream of numbers
+    :param int c : Stores the position of the column
+    :param str s : Stores the name of the column"""
+
     def __init__(self, c=0, s=""):
+        """Constructor method"""
+
         self.n = 0
         self.at = c
         self.name = s
