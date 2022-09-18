@@ -55,8 +55,8 @@ Name  | Status
 ------------- | -------------
 Homework 2  | &check;
 Homework 3  | &check;
-Homework 4  | []
-Homework 5  | []
+Homework 4  | ⬜
+Homework 5  | ⬜
 ______________________________________________________________________
 
 ## Team
