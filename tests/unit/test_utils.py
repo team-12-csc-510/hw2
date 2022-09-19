@@ -47,3 +47,13 @@ def test_csv() -> bool:
 def test_coerce():
     custom_assert_equals(utils.coerce("true"), True)
     custom_assert_equals(utils.coerce("false"), False)
+
+def test_custom_assert_equals():
+    assert custom_assert_equals(1, 1), True
+    return True
+
+
+def test_custom_assert_greater():
+    assert custom_assert_greater(2, 1), True
+    return True
+
