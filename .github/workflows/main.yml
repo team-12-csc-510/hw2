@@ -34,17 +34,17 @@ jobs:
           flake8 --ignore D203 --exclude .venv,.git,__pycache__,docs/source/conf.py,old,build,dist --max-complexity 10
           mypy src/*
           mypy tests/*
-      
+
       - name: Test with pytest
         run: |
           source $VENV
           python -m pytest
-      
+
       - name: Run tests and collect coverage
         run: |
           pip install pytest-cov
           pytest --cov src
-      
+
       - name: Upload coverage to Codecov
         uses: |
           codecov/codecov-action@v3

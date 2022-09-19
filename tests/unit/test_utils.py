@@ -42,3 +42,8 @@ def test_csv() -> bool:
     helper_function = helper_func()
     csv(csv_file_name, helper_function)
     return True
+
+
+def test_coerce():
+    custom_assert_equals(utils.coerce("true"), True)
+    custom_assert_equals(utils.coerce("false"), False)
