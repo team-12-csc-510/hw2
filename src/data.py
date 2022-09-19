@@ -1,6 +1,6 @@
-import utils
-from cols import Cols
-from row import Row
+import src.utils as utils
+from src.cols import Cols
+from src.row import Row
 
 
 class Data:
@@ -17,42 +17,16 @@ class Data:
 
         :param str src : address of the file to be processed
         """
+
         self.cols = None
         self.rows = []
         if isinstance(src, str):
-            self.csv(src)
+            utils.csv(src, self.add)
         else:
             if src is None:
                 src = []
             for x in range(src):
                 self.add(self.rows)
-
-    def csv(self, fname: str):
-        """Performs the pre- processing on each line of the input file
-
-        This method opens the input file and converts each line into
-        a list of elements.If the line is having information of the
-        Columns then it converts the line into a list of string
-        elements which will later be used to form the column names
-        and if the line contains the information of rows then it will
-        convert the it into a list having integer or float type element
-        depending on which type of data they have.This conversion is
-        performed by passing the elements to `` coerce `` function
-        in utils.
-        Each of these lists are passed as an argument to the add
-        function of data class to be processed further.
-
-        :param str fname : address of the file to be processed
-        """
-
-        with open(fname, "r+") as input_file:
-            for line in input_file:
-                real_line = line.replace("\n", "").rstrip().split(",")
-                t = []
-                for i in real_line:
-                    t.append(utils.coerce(i))
-                self.add(t.copy())
-                # print(t)
 
     def add(self, xs):
         """Forms a Row or Col object from the input lists and processes
@@ -113,9 +87,12 @@ class Data:
         """
         if showCols is None:
             showCols = self.cols.y
-        t = []
+        t = {}
         for col in showCols:
-            v = getattr(col, fun)()
+            if isinstance(fun, str):
+                v = getattr(col, fun)()
+            else:
+                v = fun(col)
             if isinstance(v, int):
                 v = utils.rnd(v, places)
             t[col.name] = v

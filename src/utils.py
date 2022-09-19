@@ -111,6 +111,22 @@ def custom_assert_greater_equals(val1, val2, msg=""):
 
 
 def csv(fname: str, fun):
+    """Performs the pre- processing on each line of the input file
+
+    This method opens the input file and converts each line into
+    a list of elements.If the line is having information of the
+    Columns then it converts the line into a list of string
+    elements which will later be used to form the column names
+    and if the line contains the information of rows then it will
+    convert the it into a list having integer or float type element
+    depending on which type of data they have.This conversion is
+    performed by passing the elements to `` coerce `` function
+    in utils.
+    Each of these lists are passed as an argument to the add
+    function of data class to be processed further.
+
+    :param str fname : address of the file to be processed
+    """
     path = os.path.dirname(os.path.abspath(__file__))
     f_path = os.path.join(path, "../data", fname)
     with open(f_path, "r+") as input_file:
