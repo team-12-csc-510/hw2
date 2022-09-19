@@ -49,7 +49,7 @@ class Data:
         file in the form of a list where each
         element belongs to a different Column (it can be name of the
         Column or the data of the column
-
+        :raises AnyError: If anything bad happens
         """
 
         if not self.cols:
@@ -83,7 +83,7 @@ class Data:
 
         :returns: list of results of operations on each required column.
         :rtype: list
-
+        :raises AnyError: If anything bad happens
         """
         if showCols is None:
             showCols = self.cols.y
