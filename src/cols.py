@@ -40,7 +40,7 @@ class Cols:
                 col = sym.Sym(c, s)
             self.all.append(col)
 
-            if re.match(".*:$", s):
+            if not re.match(".*:$", s):
                 if re.match(r".*\+$", s) or re.match(r".*\-$", s):
                     self.y.append(col)
                 else:
