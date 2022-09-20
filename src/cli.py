@@ -15,11 +15,15 @@ OPTIONS:
 
 
 def cli(arg_dict):
-    
+
     """
-    The function updates the settings based on command-line flags. If the provided flag is boolean, the existing boolean value is just flipped. Otherwise, the default settings are updated from the command-line flag values.  
+    The function updates the settings based on
+    command-line flags. If the provided flag is
+    boolean, the existing boolean value is just
+    flipped. Otherwise, the default settings are
+    updated from the command-line flag values.
     """
-    
+
     keys = list(arg_dict.keys())
     for key in keys:
         v = arg_dict[key]

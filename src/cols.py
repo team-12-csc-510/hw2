@@ -5,27 +5,32 @@ import src.sym as sym
 
 
 class Cols:
-    
-    """ 
-    The Cols class iterates over a list of column names and determines whether the Column name is that of a Numeric column opr that of a Symbols column. Based on the name of the column the Cols class also determines whether the Column is dependent or independent. Lastly it also determines whether the column is a simgle dependent klass column.
-    
+
+    """
+    The Cols class iterates over a list of column
+    names and determines whether the Column name
+    is that of a Numeric column opr that of a Symbols
+    column. Based on the name of the column the Cols
+    class also determines whether the Column is
+    dependent or independent. Lastly it also determines
+    whether the column is a simgle dependent klass column.
+
     :param names: List of all column names
     :type names: list
-    
+
     :param all: List of all the column objects
     :type all: list
-    
+
     :param klass: Sym or Num object
     :type klass: Sym or Num object
-    
+
     :param x: List of independent columns
     :type x: list
-    
+
     :param y: List of depenedent columns
     :type: y: list
     """
-    
-    
+
     def __init__(self, names):
         self.names = names
         self.all = list()

@@ -12,14 +12,16 @@ the: Dict = {"nums": 512, "dump": False}
 # Identifies the input string to be a number
 #  int , boolean or simply a  string
 def coerce(in_str):
-    
+
     """
-    Identifies whether the input string is a boolean True, a boolean False, an integer or a non-integer number.
-    
-    :param in_str: The input string 
+    Identifies whether the input string is a
+    boolean True, a boolean False, an integer
+     or a non-integer number.
+
+    :param in_str: The input string
     :type in_str: string
     """
-    
+
     if in_str == "true":
         return True
     elif in_str == "false":
@@ -42,16 +44,20 @@ def rnd(x, places=2):
 # Updates the variable
 def default_args(def_str, arg_dict):
     """
-    Retrieves the command-line flags and their corresponding values from def_str and stores them in arg_dict.
-    
-    :param def_str: the command-line flag strings from which settings vaslues are retrieved.
+    Retrieves the command-line flags and their
+    corresponding values from def_str and stores
+    them in arg_dict.
+
+    :param def_str: the command-line flag strings
+     from which settings vaslues are retrieved.
     :type def_str: string
-    
-    :param arg_dict: the retrieved command-line settings are stored here.
+
+    :param arg_dict: the retrieved command-line
+     settings are stored here.
     :type arg_str: dict
-    
+
     """
-    
+
     regex = r"\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)"
     options = re.findall(regex, def_str)
     for option in options:
@@ -70,17 +76,19 @@ def default_args(def_str, arg_dict):
 
 # Generates a string from nested table
 def o(t):
-    
+
     """
-    Returns a string generated from a nested dict and sorts them alphabetically.
-    
+    Returns a string generated from a nested
+     dict and sorts them alphabetically.
+
     param t: a dict or a nested dict.
-    
-    :return: a formatted string generated from the nested dict
+
+    :return: a formatted string generated
+    from the nested dict
     :rtype: string
-    
+
     """
-    
+
     def show(k, v):
 
         if not re.search("^_", k):
@@ -111,10 +119,10 @@ def o(t):
 def oo(t):
     """
     Prints the string returned by function o(t)
-    
+
     :param t: This parameter is passed to function o(t)
     :type t: dict
-    
+
     """
     print(o(t))
     return t
@@ -148,6 +156,22 @@ def custom_assert_greater_equals(val1, val2, msg=""):
 
 
 def csv(fname: str, fun):
+    """Performs the pre- processing on each line of the input file
+
+    This method opens the input file and converts each line into
+    a list of elements.If the line is having information of the
+    Columns then it converts the line into a list of string
+    elements which will later be used to form the column names
+    and if the line contains the information of rows then it will
+    convert the it into a list having integer or float type element
+    depending on which type of data they have.This conversion is
+    performed by passing the elements to `` coerce `` function
+    in utils.
+    Each of these lists are passed as an argument to the add
+    function of data class to be processed further.
+
+    :param str fname : address of the file to be processed
+    """
     path = os.path.dirname(os.path.abspath(__file__))
     f_path = os.path.join(path, "../data", fname)
     with open(f_path, "r+") as input_file:
