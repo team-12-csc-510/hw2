@@ -2,10 +2,9 @@
 
 Team 12's submission for [HW2-5](https://github.com/txt/se22/blob/main/docs/hw2345.md) for CSC-510.
 
-## ![example branch parameter](https://github.com/team-12-csc-510/hw2/actions/workflows/main.yml/badge.svg?branch=main)
-
+![example branch parameter](https://github.com/team-12-csc-510/hw2/actions/workflows/main.yml/badge.svg?branch=main)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7094291.svg)](https://doi.org/10.5281/zenodo.7094291)
 [![codecov](https://codecov.io/gh/team-12-csc-510/hw2/branch/main/graph/badge.svg?token=UUKFDSSVL5)](https://codecov.io/gh/team-12-csc-510/hw2)
 
 ## Table Of Contents

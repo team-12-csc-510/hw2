@@ -67,5 +67,3 @@ if __name__ == "__main__":
     test_path = os.path.join(os.path.abspath(os.curdir), "../tests/unit")
     test_eng = TestEngine(test_path)
     test_eng.run_all_tests()
-    test_eng.sort_tests()
-    test_eng.list_tests()

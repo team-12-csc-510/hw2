@@ -5,9 +5,10 @@
 # new_path = "/".join(path_ls)
 # sys.path.append(new_path)
 
+
 from src import utils
 from src.num import Num
-from src.utils import csv, custom_assert_equals, oo
+from src.utils import csv, custom_assert_equals, custom_assert_greater, oo
 
 # import sys
 
@@ -41,4 +42,23 @@ def test_csv() -> bool:
 
     helper_function = helper_func()
     csv(csv_file_name, helper_function)
+    return True
+
+
+def test_coerce():
+    custom_assert_equals(utils.coerce("true"), True)
+    custom_assert_equals(utils.coerce("false"), False)
+    custom_assert_equals(utils.coerce("1"), 1)
+    custom_assert_equals(utils.coerce("1.1"), 1.1)
+    custom_assert_equals(utils.coerce("abc"), "abc")
+    return True
+
+
+def test_custom_assert_equals():
+    assert custom_assert_equals(1, 1), True
+    return True
+
+
+def test_custom_assert_greater():
+    assert custom_assert_greater(2, 1), True
     return True
