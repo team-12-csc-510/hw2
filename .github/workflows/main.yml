@@ -53,6 +53,6 @@ jobs:
 
       - name: Generate Documentation
         run: |
-          apt-get install python3-sphinx
+          sudo apt-get install python3-sphinx
           cd docs/
           make html
