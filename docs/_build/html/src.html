@@ -10,7 +10,7 @@
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
+
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
@@ -18,10 +18,10 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
@@ -76,7 +76,7 @@
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+
   <section id="src-package">
 <h1>src package<a class="headerlink" href="#src-package" title="Permalink to this heading"></a></h1>
 <section id="submodules">
@@ -87,7 +87,11 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="src.cli.cli">
 <span class="sig-prename descclassname"><span class="pre">src.cli.</span></span><span class="sig-name descname"><span class="pre">cli</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/cli.html#cli"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.cli.cli" title="Permalink to this definition"></a></dt>
-<dd><p>The function updates the settings based on command-line flags. If the provided flag is boolean, the existing boolean value is just flipped. Otherwise, the default settings are updated from the command-line flag values.</p>
+<dd><p>The function updates the settings based on
+command-line flags. If the provided flag is
+boolean, the existing boolean value is just
+flipped. Otherwise, the default settings are
+updated from the command-line flag values.</p>
 </dd></dl>
 
 </section>
@@ -97,7 +101,13 @@
 <dt class="sig sig-object py" id="src.cols.Cols">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.cols.</span></span><span class="sig-name descname"><span class="pre">Cols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">names</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/cols.html#Cols"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.cols.Cols" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>The Cols class iterates over a list of column names and determines whether the Column name is that of a Numeric column opr that of a Symbols column. Based on the name of the column the Cols class also determines whether the Column is dependent or independent. Lastly it also determines whether the column is a simgle dependent klass column.</p>
+<p>The Cols class iterates over a list of column
+names and determines whether the Column name
+is that of a Numeric column opr that of a Symbols
+column. Based on the name of the column the Cols
+class also determines whether the Column is
+dependent or independent. Lastly it also determines
+whether the column is a simgle dependent klass column.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -121,15 +131,72 @@
 <dt class="sig sig-object py" id="src.data.Data">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.data.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/data.html#Data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.data.Data" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>Data class processes takes the file to be processed as input ,</dt><dd><p>opens it and performs respective operations line by line.
+If it the line happens to have Column information then it is
+handled by cols class and if the line happens
+to have Row information then its data is handled by row class</p>
+</dd>
+</dl>
+<p>:param str src : address of the file to be processed</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.data.Data.add">
 <span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/data.html#Data.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.data.Data.add" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>Forms a Row or Col object from the input lists and processes</dt><dd><p>it further as per the functionality</p>
+</dd>
+</dl>
+<p>This method first checks if a Col object has been created or not
+because to assign the row values to correct
+Columns it will be required later. After creating the col class
+object in the right manner, the lists that are
+passed later to this method are used to form row objects and
+these objects are appended into a list called</p>
+<blockquote>
+<div><p>‘’rows’’ of the Data class.</p>
+<p>The row object stores the list of element (of row in the input
+file) in its instance variable ‘cells’ which is
+used to put the value of the respective columns (independent
+column x or dependent columns y)</p>
+</div></blockquote>
+<p>:param list xs : pre- processed data of each line of the input
+file in the form of a list where each
+element belongs to a different Column (it can be name of the
+Column or the data of the column
+:raises AnyError: If anything bad happens</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.data.Data.stat">
 <span class="sig-name descname"><span class="pre">stat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">places</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">showCols</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mid'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/data.html#Data.stat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.data.Data.stat" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Performs the required stat operation on the columns data</p>
+<p>This method performs the stat operation, passed as the argument
+on the columns data and return the list of
+having results of operation on each column(columns are passed
+as argument with default values as dependent
+columns)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>places</strong> (<em>int</em>) – number of decimal places to be rounded off</p></li>
+<li><p><strong>showCols</strong> (<em>list</em>) – list of columns on which stat operation
+will be performed(it can be either dependent or independent columns</p></li>
+<li><p><strong>fun</strong> (<em>str</em>) – name of the stat function to be performed among
+div or mid (which have separate defination for numeric or
+symbolic data)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of results of operations on each required column.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AnyError</strong> – If anything bad happens</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -140,30 +207,111 @@
 <dt class="sig sig-object py" id="src.num.Num">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.num.</span></span><span class="sig-name descname"><span class="pre">Num</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/num.html#Num"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.num.Num" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class that summarizes a stream of numbers
+:param int c : Stores the position of the column
+:param str s : Stores the name of the column
+:raises AnyError: If anything bad happens</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.num.Num.add">
 <span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/num.html#Num.add"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.num.Num.add" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>The method adds element passed to it
+in _has instance variable along with maintaining
+the correct value for the other instance variables
+of Num class i.e. lo and hi</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v</strong> (<em>int</em>) – input element to be added to _has</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AnyError</strong> – If anything bad happens</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.num.Num.div">
 <span class="sig-name descname"><span class="pre">div</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/num.html#Num.div"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.num.Num.div" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>This method calculates the standard deviation
+from the data of the columns(i.e. _has in sorted form)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>standard deviation of columns data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AnyError</strong> – If anything bad happens</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.num.Num.mid">
 <span class="sig-name descname"><span class="pre">mid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/num.html#Num.mid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.num.Num.mid" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>This method calculates the median of the
+Column data by using _has(sorted state)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>median value of the column data</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>flaot or Int depending upon the Column</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AnyError</strong> – If anything bad happens</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.num.Num.nums">
 <span class="sig-name descname"><span class="pre">nums</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/num.html#Num.nums"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.num.Num.nums" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>This method returns the instance variable _has
+in sorted form</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>_has list in sorted form.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AnyError</strong> – If anything bad happens</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="src.num.Num.per">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">per</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/num.html#Num.per"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.num.Num.per" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><dl class="simple">
+<dt>This method returns the element of instance</dt><dd><p>variable _has</p>
+</dd>
+</dl>
+<p>This method returns the element of _has(sorted).
+The position of this element is computed according
+to the input argument p.</p>
+<p>:param int p : Stores the parameter used to compute
+returned elements position in _has.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>t</strong> (<em>list</em>) – Stored the instance variable _has</p>
+</dd>
+</dl>
+<p>in sorted form</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The element of _has at computed position</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>AnyError</strong> – If anything bad happens</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -261,7 +409,11 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="src.utils.coerce">
 <span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">coerce</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">in_str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#coerce"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.coerce" title="Permalink to this definition"></a></dt>
-<dd><p>Identifies whether the input string is a boolean True, a boolean False, an integer or a non-integer number.</p>
+<dd><p>Identifies whether the input string is a
+boolean True, a boolean False, an integer</p>
+<blockquote>
+<div><p>or a non-integer number.</p>
+</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>in_str</strong> (<em>string</em>) – The input string</p>
@@ -272,7 +424,20 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="src.utils.csv">
 <span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fun</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.csv" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Performs the pre- processing on each line of the input file</p>
+<p>This method opens the input file and converts each line into
+a list of elements.If the line is having information of the
+Columns then it converts the line into a list of string
+elements which will later be used to form the column names
+and if the line contains the information of rows then it will
+convert the it into a list having integer or float type element
+depending on which type of data they have.This conversion is
+performed by passing the elements to `` coerce `` function
+in utils.
+Each of these lists are passed as an argument to the add
+function of data class to be processed further.</p>
+<p>:param str fname : address of the file to be processed</p>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="src.utils.custom_assert_equals">
@@ -292,12 +457,16 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="src.utils.default_args">
 <span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">default_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">def_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#default_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.default_args" title="Permalink to this definition"></a></dt>
-<dd><p>Retrieves the command-line flags and their corresponding values from def_str and stores them in arg_dict.</p>
+<dd><p>Retrieves the command-line flags and their
+corresponding values from def_str and stores
+them in arg_dict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>def_str</strong> (<em>string</em>) – the command-line flag strings from which settings vaslues are retrieved.</p></li>
-<li><p><strong>arg_dict</strong> – the retrieved command-line settings are stored here.</p></li>
+<li><p><strong>def_str</strong> (<em>string</em>) – the command-line flag strings
+from which settings vaslues are retrieved.</p></li>
+<li><p><strong>arg_dict</strong> – the retrieved command-line
+settings are stored here.</p></li>
 </ul>
 </dd>
 </dl>
@@ -306,16 +475,18 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="src.utils.o">
 <span class="sig-prename descclassname"><span class="pre">src.utils.</span></span><span class="sig-name descname"><span class="pre">o</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/utils.html#o"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.utils.o" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a string generated from a nested dict and sorts them alphabetically.</p>
+<dd><dl class="simple">
+<dt>Returns a string generated from a nested</dt><dd><p>dict and sorts them alphabetically.</p>
+</dd>
+</dl>
 <p>param t: a dict or a nested dict.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a formatted string generated from the nested dict</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>string</p>
+<dd class="field-odd"><p>a formatted string generated</p>
 </dd>
 </dl>
+<p>from the nested dict
+:rtype: string</p>
 </dd></dl>
 
 <dl class="py function">
@@ -354,7 +525,7 @@
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+
 
 </footer>
         </div>
@@ -365,7 +536,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
 
 </body>
 </html>

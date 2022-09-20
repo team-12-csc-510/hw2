@@ -12,14 +12,16 @@ the: Dict = {"nums": 512, "dump": False}
 # Identifies the input string to be a number
 #  int , boolean or simply a  string
 def coerce(in_str):
-    
+
     """
-    Identifies whether the input string is a boolean True, a boolean False, an integer or a non-integer number.
-    
-    :param in_str: The input string 
+    Identifies whether the input string is a
+    boolean True, a boolean False, an integer
+     or a non-integer number.
+
+    :param in_str: The input string
     :type in_str: string
     """
-    
+
     if in_str == "true":
         return True
     elif in_str == "false":
@@ -42,16 +44,20 @@ def rnd(x, places=2):
 # Updates the variable
 def default_args(def_str, arg_dict):
     """
-    Retrieves the command-line flags and their corresponding values from def_str and stores them in arg_dict.
-    
-    :param def_str: the command-line flag strings from which settings vaslues are retrieved.
+    Retrieves the command-line flags and their
+    corresponding values from def_str and stores
+    them in arg_dict.
+
+    :param def_str: the command-line flag strings
+     from which settings vaslues are retrieved.
     :type def_str: string
-    
-    :param arg_dict: the retrieved command-line settings are stored here.
+
+    :param arg_dict: the retrieved command-line
+     settings are stored here.
     :type arg_str: dict
-    
+
     """
-    
+
     regex = r"\n [-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)"
     options = re.findall(regex, def_str)
     for option in options:
@@ -70,17 +76,19 @@ def default_args(def_str, arg_dict):
 
 # Generates a string from nested table
 def o(t):
-    
+
     """
-    Returns a string generated from a nested dict and sorts them alphabetically.
-    
+    Returns a string generated from a nested
+     dict and sorts them alphabetically.
+
     param t: a dict or a nested dict.
-    
-    :return: a formatted string generated from the nested dict
+
+    :return: a formatted string generated
+    from the nested dict
     :rtype: string
-    
+
     """
-    
+
     def show(k, v):
 
         if not re.search("^_", k):
@@ -111,10 +119,10 @@ def o(t):
 def oo(t):
     """
     Prints the string returned by function o(t)
-    
+
     :param t: This parameter is passed to function o(t)
     :type t: dict
-    
+
     """
     print(o(t))
     return t
