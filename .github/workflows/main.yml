@@ -54,6 +54,6 @@ jobs:
       - name: Generate Documentation
         run: |
           sudo apt-get install python3-sphinx
-          pip install sphinx_rtd_them
+          pip install sphinx_rtd_theme
           cd docs/
           make html
