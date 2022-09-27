@@ -119,7 +119,7 @@
 <b> Reviewer </b>: Shubhender Singh (ssingh54)
 <b> Repository reviewed </b> : [repo](https://github.com/mukunda-p/CSC510-FALL22-HW2345-42)
 
-|Notes|Score(46)| Evidence|
+|Notes|Score(42)| Evidence|
 |-----|---------|---------|
 |Video1| N/A | Not required for Homeworks |
 |Video2|N/A| Not required for Homeworks|
