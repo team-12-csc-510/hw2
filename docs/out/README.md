@@ -118,7 +118,7 @@
 <b> Reviewer </b>: Ritwik Tiwari (rtiwari2)
 <b> Repository reviewed </b> : [repo](https://github.com/rohitgeddam/CSC510_HW1/tree/HW2)
 
-|Notes|Score(44)| Evidence|
+|Notes|Score(59)| Evidence|
 |-----|---------|---------|
 |Video1| N/A | Not required for Homeworks |
 |Video2|N/A| Not required for Homeworks|
